@@ -9,7 +9,6 @@ A modern landing page with an adaptive navigation bar that changes colors as you
 | `index.html` | Website structure & content |
 | `styles.css` | All styling & animations |
 | `script.js` | Interactive features |
-| `LICENSE` | MIT License |
 
 ## ✨ Features
 
@@ -20,10 +19,7 @@ A modern landing page with an adaptive navigation bar that changes colors as you
 
 ## 🚀 How to Use
 
-### 1. Download Files
-Download all 4 files (index.html, styles.css, script.js, LICENSE)
-
-### 2. Open in Browser
+### 1. Open in Browser
 - Double-click `index.html` 
 - That's it! 🎉
 
@@ -106,7 +102,7 @@ To link to your email:
 In `script.js`, find:
 ```javascript
 function handleGetStarted() {
-  alert('Thank you for your interest! Contact us at info@prodigyinfotech.com');
+  alert('Welcome!Thanks for contacting at Prodigy Infotech');
 }
 ```
 
@@ -138,16 +134,6 @@ function handleGetStarted() {
 - Make sure `script.js` is in the same folder
 - Check browser console for errors (F12)
 
-## 📄 License
-
-MIT License - Free to use and modify. See LICENSE file for details.
-
-## 🚀 Next Steps
-
-1. **Download** all files
-2. **Open** index.html in your browser
-3. **Edit** content in your text editor
-4. **Upload** to GitHub or your web host
 
 ## 📚 Need Help?
 
