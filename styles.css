@@ -1,0 +1,426 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==================== 
+   NAVIGATION BAR STYLES
+   ==================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  background: transparent;
+  backdrop-filter: blur(0px);
+}
+
+/* When user scrolls, add glass effect */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo styling */
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #3B5BDB 0%, #1971C2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Logo color changes to white when scrolled */
+.navbar.scrolled .logo {
+  -webkit-text-fill-color: white;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+/* Navigation Links */
+.nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  opacity: 0.8;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect for dark sections - Gold color */
+.nav-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  color: #FFD700;
+  text-shadow: 0 3px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Animated underline for nav links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #FFD700;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Light text version (for light sections) */
+.nav-link.light-text {
+  color: #1a1a1a;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Hover effect for light sections - Red color */
+.nav-link.light-text:hover {
+  color: #FF6B6B;
+  text-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
+}
+
+.nav-link.light-text::after {
+  background: #FF6B6B;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.4);
+}
+
+/* Get Started Button */
+.nav-btn {
+  background: rgba(255, 255, 255, 0.95);
+  color: #3B5BDB;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 0.65rem 1.5rem;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+}
+
+.nav-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.4);
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+}
+
+/* Button style for light sections */
+.nav-btn.dark-btn {
+  background: rgba(30, 30, 30, 0.1);
+  color: #1a1a1a;
+  border-color: rgba(30, 30, 30, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.15);
+}
+
+.nav-btn.dark-btn:hover {
+  background: rgba(30, 30, 30, 0.15);
+  color: #FF6B6B;
+  border-color: #FF6B6B;
+  box-shadow: 0 6px 25px rgba(255, 107, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ==================== 
+   HERO SECTION
+   ==================== */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 0;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* Scroll down hint */
+.scroll-hint {
+  animation: bounce 2s infinite;
+  margin-top: 3rem;
+  font-size: 28px;
+}
+
+/* ==================== 
+   ANIMATIONS
+   ==================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ==================== 
+   SECTION STYLES
+   ==================== */
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  scroll-margin-top: 60px;
+}
+
+.section-dark {
+  color: white;
+}
+
+.section-light {
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+/* Individual section background colors */
+.section:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.section:nth-child(3) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.section:nth-child(4) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.section:nth-child(5) {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Section headings */
+.section h2 {
+  font-size: 48px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: 18px;
+  max-width: 600px;
+  opacity: 0.95;
+  line-height: 1.8;
+}
+
+/* ==================== 
+   FEATURES GRID
+   ==================== */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 3rem;
+}
+
+/* Feature cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons inside cards */
+.feature-card i {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* Light section card styling */
+.section-light .feature-card {
+  background: rgba(59, 91, 219, 0.08);
+  border-color: rgba(59, 91, 219, 0.2);
+  color: #1a1a1a;
+}
+
+.section-light .feature-card:hover {
+  background: rgba(59, 91, 219, 0.12);
+  border-color: rgba(59, 91, 219, 0.4);
+  color: #3B5BDB;
+  box-shadow: 0 10px 30px rgba(59, 91, 219, 0.15);
+}
+
+.section-light .feature-card h3 {
+  color: #3B5BDB;
+}
+
+/* ==================== 
+   RESPONSIVE DESIGN
+   ==================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .section p {
+    font-size: 16px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu {
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+}
